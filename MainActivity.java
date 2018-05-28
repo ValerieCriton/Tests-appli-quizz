@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mPlayButton;
     private Button mCreateButton;
     private EditText mPleaseType;
-    private User mUser;
+    private User mUser; // Import du package User
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton = (Button) findViewById(R.id.activity_main_play_btr);
         mCreateButton = (Button) findViewById(R.id.activity_main_create_btr);
         mPleaseType = (EditText)findViewById(R.id.activity_main_text_pleaseType);
-        mUser = new User();
+        mUser = new User(); //initialisation de la variable mUser
 
         mPlayButton.setEnabled(false);
         mCreateButton.setEnabled(false);
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String firstName = mPlayButton.getText().toString();
-                mUser.setFirstName(firstName);
+                String firstName = mPlayButton.getText().toString(); //récupération du prénom
+                mUser.setFirstName(firstName); // valorisation de l'utilisateur avec le setter en lui passant en paramètre le first name
                 //User clicked button
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(gameActivityIntent);

@@ -22,6 +22,10 @@ public class Question {
         this.setAnswerIndex(answerIndex);
 
     }
+    public Question (String question){
+        setQuestion(question);
+    }
+
     public String getQuestion() {
         return mQuestion;
     }
